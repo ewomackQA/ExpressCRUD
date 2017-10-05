@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Dog App</title>
+    <script src="js/index.js" type="module"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="dogData">
+        <h1>Dog List</h1>
+        <input id="inputDogName" type="text" placeholder="Enter a name">
+        <input id="inputDogAge" type="Number" placeholder="Enter an age">
+        <input id="inputDogSpecies" type="text" placeholder="Enter a species">
+        <input type="button" onclick="createAndAppendDog()" value="Create">
+
+        <div id="loader"></div>
+        <div class="animate-bottom">
+            <table id="dogTable">
+                <h2>Dogs</h2>
+                <table>
+                    <thead>
+                        <th>&nbsp;</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Species</th>
+                    </thead>
+                    <tbody id="dogDetails">
+                    </tbody>
+                </table>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

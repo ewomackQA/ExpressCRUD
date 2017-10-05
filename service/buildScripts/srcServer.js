@@ -14,9 +14,19 @@ const db = require("../config/db");
 const Dog = require("../controller/dog");
 
 //Middleware
+//Parse req.body automatically, reducing the amount of parsing needed.
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+//Enable requests from client webs
+app.use(function (req, res, next) {
+    //Determine which domain can make requests, in this case everything. (BIG SECURITY FLAW)
+    res.header("Access-Control-Allow-Origin", "*");
+    //Determine which headers are allowed.
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    //Determine which requests are allowed.
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+});
 //Routing
 app.use("/", router);
 
