@@ -89,7 +89,7 @@ const dogs = [
 
 //Checks if the object has all required attributes
 function isValidDog(dog) {
-    return dog.id && dog.name && dog.age && dog.species;
+    return  "id" in dog && "name" in dog && "age" in dog && "species" in dog;
 }
 
 //Run server
