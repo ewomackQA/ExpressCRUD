@@ -18,7 +18,7 @@ dogSchema.statics = {
         this.find(callback);
     },
     updateByID: function (id, updateData, callback) {
-        this.findOneAndUpdate({ _id: id }, updateData, callback);
+        this.findOneAndUpdate({ _id: id }, updateData, { new: true }, callback);
     },
     removeByID: function (removeData, callback) {
         this.remove(removeData, callback);

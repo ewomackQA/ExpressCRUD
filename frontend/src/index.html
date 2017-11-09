@@ -13,6 +13,8 @@
         <input id="inputDogAge" type="Number" placeholder="Enter an age">
         <input id="inputDogSpecies" type="text" placeholder="Enter a species">
         <input type="button" onclick="createAndAppendDog()" value="Create">
+        <input type="button" onclick="updateAndAppendDog()" value="Update">
+        <div id="idStore" value=""></div>
 
         <div id="loader"></div>
         <div class="animate-bottom">
@@ -24,6 +26,7 @@
                         <th>Name</th>
                         <th>Age</th>
                         <th>Species</th>
+                        <th>&nbsp;</th>
                     </thead>
                     <tbody id="dogDetails">
                     </tbody>

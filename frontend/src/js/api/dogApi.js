@@ -27,6 +27,17 @@ function create(dog, url) {
     return fetch(request).then(onSuccess, onError);
 }
 
+function update(dog, url) {
+    const request = new Request(baseUrl + url, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dog)
+    });
+    return fetch(request).then(onSuccess, onError);
+}
+
 export function createDog(dog) {
     return create(dog, "dog");
 }
@@ -35,4 +46,7 @@ export function getDogs() {
 }
 export function deleteDog(id) {
     return del(`dog/${id}`);
+}
+export function updateDog(dog, id) {
+    return update(dog, `dog/${id}`);
 }
