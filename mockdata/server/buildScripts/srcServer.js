@@ -2,15 +2,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const open = require("open");
+const cors = require("cors");
 
 //Express
 const app = express();
 const port = process.env.port || 3000;
 const router = express.Router();
 
+
 //Middleware
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors({ origin: "*" }));
 
 //Routing
 app.use("/", router);
